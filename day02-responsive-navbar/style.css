@@ -1,0 +1,167 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: #111;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00f0ff;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ================= CONTENT CARD ================= */
+.content {
+  position: relative;
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 45px;
+  background: #0b0b0b; /* solid dark box */
+  border-radius: 18px;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden; /* IMPORTANT */
+}
+
+
+/* NEON RUNNING BORDER */
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px; /* BORDER THICKNESS */
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    #00f0ff,
+    #00ff6a,
+    #ff00ff,
+    #00f0ff
+  );
+  background-size: 400% 400%;
+  animation: neonRun 4s linear infinite;
+
+  /* This masks the center so ONLY border shows */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ================= CONTENT TEXT ================= */
+.content h1 {
+  font-size: 34px;
+  margin-bottom: 25px;
+  color: #00f0ff;
+}
+
+.content p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #ddd;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes neonRun {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #111;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .content {
+    margin: 80px 15px;
+    padding: 30px 22px;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+}
