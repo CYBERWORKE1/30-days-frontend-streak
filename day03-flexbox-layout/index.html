@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 03 – Product Slider</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h2>Sale is Live</h2>
+    <div class="cart">
+      🛒 Cart <span id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- SLIDER CONTROLS -->
+  <div class="slider-wrapper">
+    <button class="arrow left" onclick="scrollLeft()">❮</button>
+
+    <!-- FLEX CONTAINER -->
+    <div class="products" id="productList"></div>
+
+    <button class="arrow right" onclick="scrollRight()">❯</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
