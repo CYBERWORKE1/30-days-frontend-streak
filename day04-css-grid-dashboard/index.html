@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 04 –  Grid Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- BACKGROUND OVERLAY -->
+  <div class="background"></div>
+
+  <!-- GRID DASHBOARD -->
+  <main class="dashboard">
+
+    <div class="widget calendar">
+      <p class="small">Tue</p>
+      <h1>10</h1>
+      <p class="muted">No events today</p>
+    </div>
+
+    <div class="widget clock">
+      <h1 id="time">09:41</h1>
+      <p class="muted">AM</p>
+    </div>
+
+    <div class="widget music">
+      <p class="small">Now Playing</p>
+      <h2>Midnight City</h2>
+      <p class="muted">M83</p>
+      <div class="controls">
+        ⏮️ ⏯️ ⏭️
+      </div>
+    </div>
+
+    <div class="widget weather">
+      <h1>22°C</h1>
+      <p>☁️ Partly Sunny</p>
+      <p class="muted">Cupertino</p>
+    </div>
+
+    <div class="widget gallery">
+      <img id="galleryImage"
+        src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg"
+        alt="Gallery">
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
