@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT COLORS */
+:root {
+  --bg: #f5f6fa;
+  --card-bg: #ffffff;
+  --text: #111;
+  --muted: #666;
+  --accent: #007aff;
+  --accent-soft: rgba(0, 122, 255, 0.15);
+}
+
+/* DARK MODE */
+body.dark {
+  --bg: #0f0f14;
+  --card-bg: #1c1c24;
+  --text: #ffffff;
+  --muted: #aaa;
+  --accent: #4da3ff;
+}
+
+/* BODY */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 50px;
+  transition: all 0.3s ease;
+}
+
+/* TITLE */
+h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+
+/* LAYOUT */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* CARD HEADINGS */
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+/* COUNTER */
+#count {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #005fd1;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* RESET BUTTON */
+#reset {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent-soft);
+}
+
+#reset:hover {
+  background: var(--accent-soft);
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  margin-top: 10px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: var(--accent);
+}
+
+/* LIVE TEXT */
+#preview {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* THEME BUTTON */
+#themeBtn {
+  background: linear-gradient(135deg, #007aff, #00c6ff);
+}
