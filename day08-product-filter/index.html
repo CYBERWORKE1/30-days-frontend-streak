@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GADA Electronics | Premium Electronics & Gear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><i class="fa-solid fa-cube"></i> GADA ELECTRONICS</h1>
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="filters">
+            <div class="filter-header">
+                <h2>Filters</h2>
+                <button id="resetBtn">Reset</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Search</label>
+                <div class="input-icon-wrapper">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Find products...">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Category</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Home">Home & Living</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Max Price: <span id="priceValue" class="highlight">$25,000</span></label>
+                <input type="range" id="priceFilter" min="0" max="25000" step="100" value="25000">
+            </div>
+
+             <div class="filter-group">
+                <label>Sort By</label>
+                <select id="sortFilter">
+                    <option value="default">Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+        </aside>
+
+        <main>
+            <div id="productContainer" class="products-grid">
+                </div>
+            <div id="noResults" class="no-results hidden">
+                <i class="fa-regular fa-face-frown"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filters.</p>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast">Item added to cart!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
