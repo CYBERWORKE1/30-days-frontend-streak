@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10 - Auth System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+  <div class="container">
+    <h1>Welcome to Frontend-Streak</h1>
+    <button id="openModalBtn">Login / Signup</button>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  
+  <div class="modal" id="modal">
+
+    <button class="close-btn" id="closeModalBtn">&times;</button>
+
+    <h2 id="formTitle">Login</h2>
+
+   
+    <div class="toggle-auth">
+      <button type="button" id="showLogin">Login</button>
+      <button type="button" id="showSignup">Signup</button>
+    </div>
+
+    
+    <form id="loginForm">
+
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Enter Email">
+        <small class="error" id="emailError"></small>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Enter Password">
+        <small class="error" id="passwordError"></small>
+      </div>
+
+      <button type="submit" id="submitBtn">Submit</button>
+
+      <p class="switch-text">
+        Don't have an account?
+        <span id="switchMode" style="cursor:pointer; color:#00d4ff;">
+          Signup
+        </span>
+      </p>
+
+      <p class="success" id="successMessage"></p>
+
+    </form>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
