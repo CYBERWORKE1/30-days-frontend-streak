@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f4efe9;
+  min-height: 100vh;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: #f0ebe5;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.sidebar button {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: none;
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.sidebar button:hover {
+  transform: translateX(6px);
+  background: #e6ded4;
+}
+
+.nav-btn.active {
+  background: #2c2c2c;
+  color: white;
+  transform: translateX(6px);
+}
+
+#themeToggle {
+  background: #b9a892;
+  color: white;
+}
+
+#themeToggle:hover {
+  background: #a08f77;
+}
+
+#logoutBtn {
+  margin-top: auto;
+  background: #2c2c2c;
+  color: white;
+}
+
+#logoutBtn:hover {
+  background: #444;
+}
+
+.content {
+  flex: 1;
+  padding: 60px;
+  background: #f9f6f2;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.content h1 {
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  flex: 1;
+  padding: 35px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #ece6df);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activity-item {
+  background: white;
+  padding: 18px 22px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+  transition: 0.25s ease;
+}
+
+.activity-item:hover {
+  transform: translateY(-4px);
+}
+
+.activity-item strong {
+  font-weight: 600;
+}
+
+.activity-item span {
+  font-size: 13px;
+  color: #777;
+}
+
+.unauthorized {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unauthorized div {
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.unauthorized h1 {
+  margin-bottom: 20px;
+}
+
+.unauthorized button {
+  padding: 12px 30px;
+  border-radius: 40px;
+  border: none;
+  background: #2c2c2c;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.unauthorized button:hover {
+  background: #444;
+}
+
+body.dark {
+  background: #121212;
+}
+
+body.dark .sidebar {
+  background: #1f1f1f;
+}
+
+body.dark .content {
+  background: #181818;
+  color: #f5f5f5;
+}
+
+body.dark .card {
+  background: #222;
+  color: #f5f5f5;
+}
+
+body.dark .activity-item {
+  background: #222;
+  color: #f5f5f5;
+}
+
+body.dark .sidebar button {
+  background: #2a2a2a;
+  color: #f5f5f5;
+}
+
+body.dark .nav-btn.active {
+  background: #b9a892;
+  color: black;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

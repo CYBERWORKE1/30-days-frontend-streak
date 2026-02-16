@@ -9,16 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const passwordInput = document.getElementById("password");
   const emailError = document.getElementById("emailError");
   const passwordError = document.getElementById("passwordError");
-  const submitBtn = document.getElementById("submitBtn");
 
   const form = document.getElementById("loginForm");
   const formTitle = document.getElementById("formTitle");
   const switchMode = document.getElementById("switchMode");
 
   let authMode = "login";
-  let currentUser = null;
-
- 
 
   function getUsers() {
     return JSON.parse(localStorage.getItem("users")) || [];
@@ -30,16 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function setCurrentUser(email) {
     localStorage.setItem("currentUser", email);
-    currentUser = email;
   }
-
-  function logout() {
-    localStorage.removeItem("currentUser");
-    currentUser = null;
-    renderLanding();
-  }
-
-
 
   function renderLanding() {
     container.innerHTML = `
@@ -52,19 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .addEventListener("click", openModal);
   }
 
-  function renderDashboard() {
-    container.innerHTML = `
-      <h1>Welcome 👋</h1>
-      <p>${currentUser}</p>
-      <button id="logoutBtn">Logout</button>
-    `;
-
-    document
-      .getElementById("logoutBtn")
-      .addEventListener("click", logout);
-  }
-
-  
   function openModal() {
     modal.classList.add("active");
     overlay.classList.add("active");
@@ -77,8 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeBtn.addEventListener("click", closeModal);
   overlay.addEventListener("click", closeModal);
-
-
 
   function updateMode() {
     if (authMode === "login") {
@@ -95,14 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
     updateMode();
   });
 
- 
-
   function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   }
-
-
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -135,8 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       users.push({ email, password });
       saveUsers(users);
       setCurrentUser(email);
-      closeModal();
-      renderDashboard();
+      window.location.href = "../day11-dashboard-app/index.html";
     }
 
     if (authMode === "login") {
@@ -153,17 +120,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       setCurrentUser(email);
-      closeModal();
-      renderDashboard();
+      window.location.href = "../day11-dashboard-app/index.html";
     }
   });
 
- 
-
-  currentUser = localStorage.getItem("currentUser");
+  const currentUser = localStorage.getItem("currentUser");
 
   if (currentUser) {
-    renderDashboard();
+    window.location.href = "../day11-dashboard-app/index.html";
   } else {
     renderLanding();
   }
