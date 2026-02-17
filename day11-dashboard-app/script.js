@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("goLogin").addEventListener("click", () => {
       window.location.href = "../day10-auth-system/index.html";
+
+
+
     });
   }
 
