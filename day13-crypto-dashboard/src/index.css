@@ -1,0 +1,271 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111827;
+  scroll-behavior: smooth;
+}
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+}
+
+.navbar li:hover {
+  opacity: 0.7;
+}
+
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 35, 50, 0.7),
+      rgba(0, 35, 50, 0.7)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
+      center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.hero-content button {
+  padding: 14px 30px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-content button:hover {
+  background: white;
+  color: #0f172a;
+}
+
+
+.dashboard-section {
+  background: #f8fafc;
+  padding: 120px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.dashboard-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.dashboard-header input {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  width: 260px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.dashboard-header input:focus {
+  outline: none;
+  border-color: #0f172a;
+}
+
+
+.table {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  padding: 20px 30px;
+  font-weight: 600;
+  font-size: 13px;
+  background: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #6b7280;
+}
+
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  padding: 22px 30px;
+  align-items: center;
+  border-top: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background: #f9fafb;
+}
+
+
+.coin-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.coin-info img {
+  width: 32px;
+  height: 32px;
+}
+
+
+.positive {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.negative {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+
+.loader {
+  margin: 60px auto;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #0f172a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  width: 700px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+.error {
+  color: #dc2626;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    padding-left: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .navbar {
+    padding: 20px 40px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .table-header span:last-child,
+  .table-row span:last-child {
+    display: none;
+  }
+}
